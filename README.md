@@ -1,4 +1,4 @@
-# W4153-Hello-World-FastAPI
+# recipient_service_Care2Share
 
 ## Overview
 
@@ -26,7 +26,7 @@ sudo apt update
 
 sudo apt install python3 python3-pip -y
 
-git clonehttps://github.com/donald-f-ferguson/W4153-Hello-World-FastAPI.git
+git https://github.com/cpreston123/recipient_service_Care2Share.git
 
 sudo apt install python3.12-venv
 
