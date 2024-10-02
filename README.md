@@ -44,7 +44,7 @@ curl localhost:8000
 - And you should get ...
 ```
 INFO:     127.0.0.1:35572 - "GET / HTTP/1.1" 200 OK
-{"\n\nmessage":"Hello from W4153-Hello-World-FastAPI!\n\n"}(venv)
+{"\n\nmessage":"Hello from recipient_service_Care2Share!\n\n"}(venv)
 ```
 
 ### Remote Access
