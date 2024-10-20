@@ -3,6 +3,8 @@
 ## Overview
 
 Simple Hello World FastAPI to help students get their first VM deployed on a cloud.
+Recipient service for Care2Share Application (microservice) (containerized with Docker).
+Running on Port 8002.
 
 ## Execution
 
@@ -17,16 +19,15 @@ Simple Hello World FastAPI to help students get their first VM deployed on a clo
 - When EC2 instance is running, connect to it by selecting the instance and then
 the connect menu option. Use the default connection manager.
 
-### Running Application
+### Running Application Locally / on GCP
 
-- I used Ubuntu OS on Amazon instance.
 - Some commands:
 ```
 sudo apt update
 
 sudo apt install python3 python3-pip -y
 
-git https://github.com/cpreston123/recipient_service_Care2Share.git
+git clone https://github.com/cpreston123/recipient_service_Care2Share.git
 
 sudo apt install python3.12-venv
 
@@ -34,23 +35,12 @@ sudo python3 -m venv ./venv
 
 source venv/bin/activate
 
-pip install requirements.txt
-
-python main.py &
-
-curl localhost:8000
-
-```
-- And you should get ...
-```
-INFO:     127.0.0.1:35572 - "GET / HTTP/1.1" 200 OK
-{"\n\nmessage":"Hello from recipient_service_Care2Share!\n\n"}(venv)
-```
+docker compose up --build
 
 ### Remote Access
 
 - Navigate to the security group.
-- Add an inbound rule for TCP, port 8000 and 0.0.0.0/0
+- Add an inbound rule for TCP, port 8002 and 0.0.0.0/0
 
 <img src="inbound-rules.jpg">
 
