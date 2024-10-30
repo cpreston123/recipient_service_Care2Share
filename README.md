@@ -8,7 +8,7 @@ Running on Port 8002.
 ```
 source venv/bin/activate
 *start docker container*
-docker compose up --build
+docker-compose up --build
 ^Z
 bg %1
 curl localhost:8002
