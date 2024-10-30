@@ -1,27 +1,24 @@
 # recipient_service_Care2Share
 
 ## Overview
+Recipient service for Care2Share Application (atomic service) (containerized with Docker).
+Running on Port 8002. 
 
-Simple Hello World FastAPI to help students get their first VM deployed on a cloud.
-Recipient service for Care2Share Application (microservice) (containerized with Docker).
-Running on Port 8002.
+### Running and Testing on VM
+```
+source venv/bin/activate
+*start docker container*
+docker compose up --build
+^Z
+bg %1
+curl localhost:8002
+fg %1
+^C
+```
+On browser, access http://localhost:8002/
 
-## Execution
 
-### AWS Instance
-
-- Create a "free tier" compatible instance.
-- Make sure you setup free tier alerting emails.
-- I chose Ubuntu Linux.
-- You can use the default VPC but create a new security group.
-- Make sure you enable remote access.
-- Create a new key pair and save the .pem file somewhere safe.
-- When EC2 instance is running, connect to it by selecting the instance and then
-the connect menu option. Use the default connection manager.
-
-### Running Application Locally / on GCP
-
-- Some commands:
+### Set up + Running Application Locally
 ```
 sudo apt update
 
@@ -35,26 +32,8 @@ sudo python3 -m venv ./venv
 
 source venv/bin/activate
 
+*start docker container*
+
 docker compose up --build
-
-### Remote Access
-
-- Navigate to the security group.
-- Add an inbound rule for TCP, port 8002 and 0.0.0.0/0
-
-<img src="inbound-rules.jpg">
-
-- Go back to EC2 instance configuration and get public IP address.
-- Mine was 53.208.146.60
-- Navigate to http://54.208.146.60:8000/ (__Make sure you use HTTP. Browser default to HTTPS.__)
-
-# Finish
-
-- Shutdown and terminate your instance.
-- We can make another one later.
-
-
-
-
-
-
+```
+See above "Running and Testing on VM" to test application
